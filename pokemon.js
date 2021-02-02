@@ -1,5 +1,3 @@
-let returnData;
-
 function updatePokemon() {
     const pokemonId = document.getElementById('pokemonId');
     console.log(pokemonId.value);
@@ -14,8 +12,6 @@ function getPokemonData(id) {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             let data = JSON.parse(this.response);
-            returnData = data;
-            console.log(data);
             updateHTML(data);
         }
     };
