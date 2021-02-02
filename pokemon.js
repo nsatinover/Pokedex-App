@@ -1,3 +1,5 @@
+let test;
+
 function updatePokemon() {
     const pokemonId = document.getElementById('pokemonId');
     console.log(pokemonId.value);
@@ -12,6 +14,7 @@ function getPokemonData(id) {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             let data = JSON.parse(this.response);
+            test = data;
             updateHTML(data);
         }
     };
@@ -22,7 +25,6 @@ function getPokemonData(id) {
 function updateHTML(data) {
     let pokeImg = document.getElementById("img");
     pokeImg.style.visibility = "visible";
-    pokeImg.src = data.sprites.back_default;
-
+    pokeImg.src = data.sprites.other.dream_world.front_default;
     document.getElementById("name").innerText = data.name;
 }
