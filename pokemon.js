@@ -20,6 +20,9 @@ function getPokemonData(id) {
 }
 
 function updateHTML(data) {
-    document.getElementById("img").src = data.sprites.back_default;
+    let pokeImg = document.getElementById("img");
+    pokeImg.style.visibility = "visible";
+    pokeImg.src = data.sprites.back_default;
+
     document.getElementById("name").innerText = data.name;
 }
