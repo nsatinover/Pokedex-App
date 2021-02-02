@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Pokemon Index!</title>
-        <link rel="shortcut icon" type="image/png" href="../imgs/pikaFav.png"/>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Database</title>
+    <link rel="shortcut icon" type="image/png" href="../imgs/pikaFav.png" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
         integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/custom.css">
-    </head>
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
 
-    <body>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Pokemon Index</h1>
+        </header>
+
+        <main>
+            <label>ID:</label>
+            <input type="text" name="pokemonId" id="pokemonId">
+            <button type="submit" onclick="updatePokemon()">View Pokemon</button>
+
+            <img id="img" height="250px" width="250px" alt="N/A">
+
+            </br>
+
+            <p id="name"></p>
+        </main>
         
-        <div class="container">
-            <p>Pokemon Index</p>
-        </div>
+    </div>
 
-        <script src="rest/index.js"></script>
+    <script src="../pokemon.js"></script>
 
-    </body>
+</body>
 
 </html>
