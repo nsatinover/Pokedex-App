@@ -1,5 +1,11 @@
 let test;
 
+document.querySelector('#pokemonId').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        updatePokemon();
+    }
+});
+
 function updatePokemon() {
     const pokemonId = document.getElementById('pokemonId');
     console.log(pokemonId.value);
