@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/custom.css">
 </head>
 
-<body>
+<body onload="GetAllPokemon()">
 
     <div class="container">
 
@@ -20,17 +20,23 @@
         </header>
 
         <main>
-            <label>ID:</label>
-            <input type="text" name="pokemonId" id="pokemonId">
-            <button type="submit" onclick="updatePokemon()">View Pokemon</button>
-
-            <img id="img" alt="N/A" style="visibility: hidden;">
-
+            <div style="padding-bottom: 1em;">
+                <label>Name/ ID:</label>
+                <input type="text" name="pokemonId" id="pokemonId">
+                <button type="submit" onclick="updatePokemon()">View Pokemon</button>
+                <button type="submit" onclick="clearPokemon()">Clear Pokemon</button>
+            </div>
             </br>
-
-            <p id="name"></p>
+            <div id="main">
+                
+            </div>
         </main>
-        
+
+        <div id="fullIndex">
+
+
+        </div>
+
     </div>
 
     <script src="../pokemon.js"></script>

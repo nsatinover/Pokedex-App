@@ -1,5 +1,6 @@
 header,
-main
+main,
+#fullIndex
 {
    border: solid black 1px;
    padding: .5em;
@@ -13,22 +14,110 @@ header {
 main {
    grid-area: main;
    background-color: aliceblue;
-   padding-top: 20px;
+   padding: 30px;
+}
+
+#fullIndex {
+   grid-area: fullIndex;
+   background-color: aliceblue;
+   width: 100%;
+   display: flexbox;
+   flex-direction: row;
 }
 
 img {
-   width: 500px;
-   height: 500px;
+   width: 100px;
+   height: 100px;
    display: block;
    margin: auto;
    padding: 5px;
-   border: 1px solid black;
 }
 
 .container {
    grid-template-columns: 1fr;
-   grid-template-rows: minmax(200px, auto) minmax(200px, auto);
+   grid-template-rows: minmax(200px, auto) minmax(200px, auto), minmax(200px, auto);
    grid-template-areas: 
    "header" 
-   "main";
+   "main"
+   "fullIndex";
+}
+
+.card {
+   width: calc(100% / 5);
+   display: inline-block;
+   padding: 10px;
+   border: solid rgb(168, 167, 167) 2px;
+   border-radius: 0px;
+}
+
+.fire {
+   background-color: firebrick;
+}
+
+.bug {
+   background-color: greenyellow;
+}
+
+.grass {
+   background-color: green;
+}
+
+.water {
+   background-color: aqua;
+}
+
+.normal {
+   background-color: burlywood;
+}
+
+.electric {
+   background-color: yellow;
+}
+
+.poison {
+   background-color: slateblue;
+}
+
+.ground {
+   background-color: chocolate;
+}
+
+.fairy {
+   background-color: pink;
+}
+
+.psychic {
+   background-color: rebeccapurple;
+}
+
+.rock {
+   background-color: grey;
+}
+
+.fighting {
+   background-color: crimson;
+}
+
+.ghost {
+   background-color: darkmagenta;
+}
+
+.ice {
+   background-color: darkturquoise;
+}
+
+.dragon {
+   background-color: olive;
+}
+
+.steel {
+   background-color: steelblue;
+}
+
+.dark {
+   background-color: darkslategrey;
+}
+
+.flying {
+   background-color: lightskyblue;
 }
