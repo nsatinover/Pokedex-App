@@ -45,7 +45,7 @@ document.querySelector('#pokemonId').addEventListener('keypress', function (e) {
 
 function updatePokemon() {
     const pokemonId = document.getElementById('pokemonId');
-    getPokemonData(pokemonId.value, '#main');
+    getPokemonData(pokemonId.value.toLowerCase(), '#main');
 }
 
 function clearPokemon(){
@@ -54,8 +54,8 @@ function clearPokemon(){
 
 function getPokemonData(id, section) {
     let xhttp = new XMLHttpRequest();
-    
-    xhttp.open("GET", `https://pokeapi.co/api/v2/pokemon/${id}/`, false);
+    // true allows asynch (fast load) fast keeps order (slow load)
+    xhttp.open("GET", `https://pokeapi.co/api/v2/pokemon/${id}/`, true);
 
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
