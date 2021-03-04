@@ -1,6 +1,7 @@
 header,
 main,
-#fullIndex
+#fullIndex,
+#database
 {
    border: solid black 1px;
    padding: .5em;
@@ -13,6 +14,12 @@ header {
 
 main {
    grid-area: main;
+   background-color: aliceblue;
+   padding: 30px;
+}
+
+#database {
+   grid-area: database;
    background-color: aliceblue;
    padding: 30px;
 }
@@ -35,10 +42,11 @@ img {
 
 .container {
    grid-template-columns: 1fr;
-   grid-template-rows: minmax(200px, auto) minmax(200px, auto), minmax(200px, auto);
+   grid-template-rows: minmax(200px, auto), minmax(200px, auto), minmax(200px, auto), minmax(200px, auto);
    grid-template-areas: 
    "header" 
    "main"
+   "database"
    "fullIndex";
 }
 

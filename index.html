@@ -8,7 +8,7 @@
     <link rel="shortcut icon" type="image/png" href="imgs/pikaFav.png" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
         integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="static/css/custom.css">
 </head>
 
 <body>
@@ -19,28 +19,31 @@
             <h1>Pokemon Index</h1>
         </header>
 
-        <main>
+        <main onload="GetAllPokemon()">
             <div style="padding-bottom: 1em;">
                 <label>Name/ ID:</label>
                 <input type="text" name="pokemonId" id="pokemonId">
-                <button type="submit" onclick="updatePokemon()">View Pokemon</button>
-                <button type="submit" onclick="clearPokemon()">Clear Pokemon</button>
+                <button type="submit" onclick="updatePokemon()">Get</button>
+                <button type="submit" onclick="clearPokemon()">Clear</button>
+                <button type="submit" onclick="savePokemon()">Save</button>
             </div>
             </br>
             <div id="main">
-                
+
             </div>
         </main>
 
-        <div id="fullIndex">
-
+        <div id="database">
 
         </div>
 
-    </div>
+        <div id="fullIndex">
+        </div>
 
-    <!-- <script src="../pokemon.js"></script> -->
-    <!-- <script src="/index.js"></script> -->
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="static/js/pokemon.js"></script>
 </body>
 
 </html>

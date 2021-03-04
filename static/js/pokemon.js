@@ -1,9 +1,12 @@
 let test;
 let testAll;
+let dataArray = [];
 
 let pokeCount = 0;
 let pokeArray = [];
 let pokeCardArray = [];
+
+GetAllPokemon();
 
 function GetAllPokemon() {
     GetAllPokemonData();
@@ -11,9 +14,9 @@ function GetAllPokemon() {
 }
 
 function GetAllPokemonData() {
-    let xhttp = new XMLHttpRequest();
+    let xhttp = new XMLHttpRequest;
 
-    xhttp.open("GET", `https://pokeapi.co/api/v2/pokemon?limit=898&offset=0`, false);
+    xhttp.open("GET", `https://pokeapi.co/api/v2/pokemon?limit=151&offset=0`, false);
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -37,12 +40,6 @@ function CreatePokeCard(item){
     getPokemonData(name, '#fullIndex')
 }
 
-document.querySelector('#pokemonId').addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-        updatePokemon();
-    }
-});
-
 function updatePokemon() {
     const pokemonId = document.getElementById('pokemonId');
     getPokemonData(pokemonId.value.toLowerCase(), '#main');
@@ -61,6 +58,7 @@ function getPokemonData(id, section) {
         if (this.readyState == 4 && this.status == 200) {
             let data = JSON.parse(this.response);
             test = data;
+            dataArray.push(data);
             updateHTML(data, section);
         }
     };
@@ -110,3 +108,29 @@ function compare( pokeA, pokeB ) {
         return 0;
     }
 }
+
+let $pokeArray;
+function savePokemon(){
+    $pokeArray = $('#main').children().toArray();
+    console.log($pokeArray);
+
+    let pokemonArray = [];
+
+    for(let i = 0; i < $pokeArray.length; i++){
+        const pokemon = {
+            id: parseInt(($pokeArray[i].children[0].children[1].innerText).replace('#','')),
+            name: $pokeArray[i].children[0].children[0].innerText,
+            type: $pokeArray[0].children[2].innerText
+        }
+        pokemonArray.push(pokemon);
+        console.log(pokemon);
+    }
+}
+
+document.querySelector('#pokemonId').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        updatePokemon();
+    }
+});
+
+// module.exports = { updateHTML };
